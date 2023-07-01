@@ -54,24 +54,24 @@ public partial class TargetingComponent : EntityComponent
     /// </summary>
     public virtual void SetupRelationships()
     {
-        if (Entity.Tags.Has(Tags.PLAYER_FRIENDLY))
+        if (Entity.Tags.Has(TargetingTags.PLAYER_FRIENDLY))
         {
-            Relationships.Add(Tags.PLAYER_ENEMY, Relationship.Hate);
-            Relationships.Add(Tags.MONSTER, Relationship.Hate);
-        } else if (Entity.Tags.Has(Tags.PLAYER_ENEMY))
+            Relationships.Add(TargetingTags.PLAYER_ENEMY, Relationship.Hate);
+            Relationships.Add(TargetingTags.MONSTER, Relationship.Hate);
+        } else if (Entity.Tags.Has(TargetingTags.PLAYER_ENEMY))
         {
-            Relationships.Add(Tags.PLAYER_FRIENDLY, Relationship.Hate);
-            Relationships.Add(Tags.PLAYER, Relationship.Hate);
-            Relationships.Add(Tags.MONSTER, Relationship.Hate);
-        } else if (Entity.Tags.Has(Tags.NEUTRAL))
+            Relationships.Add(TargetingTags.PLAYER_FRIENDLY, Relationship.Hate);
+            Relationships.Add(TargetingTags.PLAYER, Relationship.Hate);
+            Relationships.Add(TargetingTags.MONSTER, Relationship.Hate);
+        } else if (Entity.Tags.Has(TargetingTags.NEUTRAL))
         {
-            Relationships.Add(Tags.MONSTER, Relationship.Hate);
-        } else if (Entity.Tags.Has(Tags.MONSTER))
+            Relationships.Add(TargetingTags.MONSTER, Relationship.Hate);
+        } else if (Entity.Tags.Has(TargetingTags.MONSTER))
         {
-            Relationships.Add(Tags.NPC, Relationship.Hate);
+            Relationships.Add(TargetingTags.NPC, Relationship.Hate);
         }
 
-        if (!Entity.Tags.Has(Tags.MONSTER))
+        if (!Entity.Tags.Has(TargetingTags.MONSTER))
         {
             EvadeAttackers = true;
         }

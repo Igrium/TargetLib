@@ -10,7 +10,7 @@ namespace TargetLib;
 /// <summary>
 /// Standard tag names to indicate which entities should be targeted by who. 
 /// </summary>
-public static class Tags
+public static class TargetingTags
 {
     /// <summary>
     /// By default, only entities tagged with this can be targeted.
